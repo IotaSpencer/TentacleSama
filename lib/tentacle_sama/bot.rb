@@ -41,7 +41,8 @@ module TentacleSama
     module_function
 
     def self.start
-      @bot.run
+      @bot.run(true)
+      @bot.join
     rescue Interrupt
       @bot.stop
     end
