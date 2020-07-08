@@ -1,0 +1,6 @@
+#! /usr/bin/ruby
+
+require 'tentacle_sama'
+module TentacleSama
+end
+TentacleSama::Bot.start

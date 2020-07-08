@@ -1,0 +1,5 @@
+require 'tentacle_sama/version'
+require 'tentacle_sama/config'
+require 'tentacle_sama/bot'
+require 'tentacle_sama/exceptions'
+require 'tentacle_sama/helpers'
