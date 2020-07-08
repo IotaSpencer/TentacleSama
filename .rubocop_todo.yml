@@ -47,7 +47,7 @@ Layout/EmptyLinesAroundAccessModifier:
 # SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
-    - 'lib/tentacle_sama/events/member_join.rb'
+    - 'lib/tentacle_sama/events/joins_and_leaves.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -78,7 +78,7 @@ Layout/TrailingEmptyLines:
   Exclude:
     - 'bin/tentacle_sama'
     - 'lib/tentacle_sama/config.rb'
-    - 'lib/tentacle_sama/events/member_join.rb'
+    - 'lib/tentacle_sama/events/joins_and_leaves.rb'
     - 'lib/tentacle_sama/version.rb'
 
 # Offense count: 1
@@ -113,7 +113,7 @@ Style/Documentation:
     - 'lib/tentacle_sama/commands/owner.rb'
     - 'lib/tentacle_sama/config.rb'
     - 'lib/tentacle_sama/events/id_dm.rb'
-    - 'lib/tentacle_sama/events/member_join.rb'
+    - 'lib/tentacle_sama/events/joins_and_leaves.rb'
     - 'lib/tentacle_sama/exceptions/not_owner_error.rb'
 
 # Offense count: 1
@@ -142,7 +142,7 @@ Style/FrozenStringLiteralComment:
     - 'lib/tentacle_sama/commands/confirm.rb'
     - 'lib/tentacle_sama/commands/owner.rb'
     - 'lib/tentacle_sama/config.rb'
-    - 'lib/tentacle_sama/events/member_join.rb'
+    - 'lib/tentacle_sama/events/joins_and_leaves.rb'
     - 'lib/tentacle_sama/exceptions/not_owner_error.rb'
     - 'lib/tentacle_sama/version.rb'
 
