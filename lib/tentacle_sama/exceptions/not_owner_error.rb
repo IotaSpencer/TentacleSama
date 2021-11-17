@@ -1,5 +1,5 @@
 module TentacleSama
-  module Execeptions
+  module Exceptions
     class NotOwnerError < StandardError
       def initialize(event, msg = nil)
         msg = msg || "User #{event.user} is not owner"
