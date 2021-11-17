@@ -69,6 +69,14 @@ module TentacleSama
     rescue
     end
 
+    def shutdown_gracefully
+      @bot.watching = 'itself die... :skull:'
+      @bot.debug 'Beginning a shutdown loop'
+      @bot.debug 'Shutting down... '
+      sleep(60)
+      @bot.stop
+    end
+
     def self.bot
       @bot
     end
