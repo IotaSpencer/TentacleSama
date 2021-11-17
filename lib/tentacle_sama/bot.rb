@@ -53,11 +53,17 @@ module TentacleSama
 
     module_function
 
+    Signal.trap('TERM') do
+      @bot.watching = 'itself die... :skull:'
+      @bot.stop
+    end
+
     def self.start(bg = true)
       @bot.run(bg)
       @bot.join
     rescue Interrupt # Restart
-      @botbot.debug ""
+      @bot.debug 'Restarting?'
+      @bot.watching = 'itself reincarnate'
       @bot.stop
       @bot.run(bg)
     rescue
