@@ -2,12 +2,25 @@ require 'discordrb'
 module TentacleSama
   module Bot
     attr_reader :bot
-
+    prefix_proc = proc do |message|
+      # Extract the first word and the rest of the message,
+      # and ignore the message if it doesn't start with "!":
+      match = /^\$(\w+)(.*)/.match(message.content)
+      if match
+        first = match[1]
+        rest = match[2]
+        # Return the modified string with the first word lowercase:
+        "#{first.downcase}#{rest}"
+      end
+    end
     @bot = Discordrb::Commands::CommandBot.new(
-      token:     TentacleSama::Configs::BotConfig.config.bot.token,
-      prefix:    '$',
+      token: TentacleSama::Configs::BotConfig.config.bot.token,
+      prefix: prefix_proc,
       fancy_log: true,
-      log_mode:  :normal
+      log_mode: :normal,
+      advanced_functionality: true,
+      compress_mode: :stream,
+      intents: :all
     )
     # Discord commands
     module DiscordCommands
@@ -40,11 +53,14 @@ module TentacleSama
 
     module_function
 
-    def self.start
-      @bot.run(true)
+    def self.start(bg = true)
+      @bot.run(bg)
       @bot.join
-    rescue Interrupt
+    rescue Interrupt # Restart
+      @botbot.debug ""
       @bot.stop
+      @bot.run(bg)
+    rescue
     end
 
     def self.bot
