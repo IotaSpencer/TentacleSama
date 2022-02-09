@@ -1,5 +1,5 @@
-# AgeBot (aka 年齢 様 (Nenrei-Sama))
+# Tentacle-Sama
 
 ## About
 
-Nenrei-Sama is a bot that listens for files to be sent to its private messages and will forward these pictures to an agreed upon channel.
+Tentacle Sama is an all-around bot developed primarily for use on a Discord Server
