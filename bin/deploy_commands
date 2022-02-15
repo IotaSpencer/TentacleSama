@@ -1,8 +1,0 @@
-#! /usr/bin/ruby
-
-require 'discordrb'
-require 'tentacle_sama'
-require 'tentacle_sama/config'
-token = TentacleSama::Configs::BotConfig.config.bot.token
-bot = Discordrb::Bot.new(token: token)
-# bot.register_application_command...
